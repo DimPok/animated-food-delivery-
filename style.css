@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+@keyframes rotate {
+    0% {
+       transform: translate(-50%, -50%) rotate(0); 
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+body {
+  font-family: Pacifico;
+  font-size: 23px;
+  line-height: 1.25;
+
+  background-color: #ffffff;
+  color: #000000;
+  
+  height: 4000px;
+
+}
+
+
+main {
+    border: 10px solid navy;
+    position: fixed;
+    top: -2000px;
+    left: 0;
+    width: 98%;
+}
+
+
+header {
+    background-color: #E8AA42;
+    padding: 47px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+
+header nav a {
+    margin: 0 0 0 24px;
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+    padding: 0 0 16px 0;
+}
+
+
+header nav a img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    clip-path: polygon(0 0, 0 100%,  0 100%, 0 0);
+    transition: clip-patch 0.5s;
+}
+
+header nav a:hover img {
+   clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+}
+
+
+
+section {
+    padding: 95px;
+}
+
+
+section.vintage {
+    background-color: #E8AA42;
+}
+
+
+section.peach {
+    background-color: #FFD3B0;
+}
+
+
+section.blue {
+    background-color: #AFD3E2;
+}
+
+
+h1 {
+    max-width: 250px;
+}
+
+
+h2 {
+   font-size: 76px;
+   text-align: center;
+   max-width: 10em;
+   margin: 0 auto 0 auto;
+}
+
+
+figure {
+    max-width: 700px;
+    margin: 0 auto 0 auto;
+    position: relative;
+}
+
+
+figcaption {
+    position: absolute;
+    top: 68%;
+    left: 100%;
+    width: 50%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+}
+
+
+figcaption::before {
+    content: "";
+    padding: 160% 0 0 0;
+    display: block;
+}
+
+
+section.peach figcaption {
+    left: 0;
+}
+
+
+figcaption img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 500px;
+    opacity: 0;
+    transition: opacity 0.5s 0.5s;
+}
+
+
+figcaption.in-view img {
+    opacity: 1;
+}
+
+
+figcaption img:nth-child(2) {
+    transition-delay: 1s;
+}
+
+
+
+figcaption img:nth-child(3) {
+    transition-delay: 1.5s;
+}
+
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 600px) {
+    body, a, a:hover {
+        cursor: none;
+    }
+
+    div.cursor {
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        width: 18px;
+        height: 18px;
+        background-image: url(./images/cursor.svg);
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+    }
+
+    div.cursor-quoater {
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        width: 100px;
+        height: 100px;
+        background-image: url(./images/rotating-cursor.png);
+        background-size: 100px 100px;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        animation: rotate 20s infinite linear;
+    }
+}

@@ -1,0 +1,1 @@
+This is an animated landing page for organizations that deliver breakfast, lunch and dinner at home to customers or to their offices. Everything is done in pure HTML, CSS and JavaScript, optimized for search engines. If desired, images and titles can be replaced with your own, insert your own links
